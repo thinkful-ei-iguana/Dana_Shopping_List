@@ -1,10 +1,10 @@
 'use strict';
-removeAndCheck();
+// removeAndCheck();
 //adding a new item in the list
 $('form#js-shopping-list-form').on('submit', e=>{
   e.preventDefault();
   let item = $('input#shopping-list-entry:input').val();
-  removeAndCheck();
+  // removeAndCheck();
 
   $('.shopping-list').append(`
   <li>
@@ -20,11 +20,11 @@ $('form#js-shopping-list-form').on('submit', e=>{
   </li>
   `);
   
-  removeAndCheck();
+  // removeAndCheck();
 });
 function removeAndCheck(){
 //removing and checking off things from list
-  $('button').on('click', e=>{
+  $('.shopping-list').on('click', 'button', e=>{
     switch($(e.currentTarget).attr('class')){
     case 'shopping-item-delete':
       $(e.currentTarget).parents('li').remove();
@@ -36,3 +36,4 @@ function removeAndCheck(){
 
   });
 }
+removeAndCheck();
