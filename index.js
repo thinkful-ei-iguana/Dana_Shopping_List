@@ -1,9 +1,10 @@
 'use strict';
-
+removeAndCheck();
 //adding a new item in the list
 $('form#js-shopping-list-form').on('submit', e=>{
   e.preventDefault();
   let item = $('input#shopping-list-entry:input').val();
+  removeAndCheck();
 
   $('.shopping-list').append(`
   <li>
@@ -33,6 +34,5 @@ function removeAndCheck(){
       break;
     }
 
-  })
-;}
-removeAndCheck();
+  });
+}
